@@ -4,7 +4,7 @@ This project is a Nagios-style monitoring check to run dcdiag.exe on Active Dire
 
 It is highly inspired from [check \_ad.vbs](https://exchange.nagios.org/directory/Plugins/Operating-Systems/Windows/Active-Directory-(AD)-Check/details) but fully rewritten using PowerShell to provide cleaner code and allow passing additional arguments.
 
-**Only tested on Windows Server 2019 English, most likely works on other version, most unlikely works on different version**
+**Only tested on Windows Server 2019 English, most likely works on other version, most unlikely works on different language**
 
 # Features
 
