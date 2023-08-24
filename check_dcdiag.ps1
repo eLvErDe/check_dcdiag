@@ -130,7 +130,8 @@ function Run-Dc-Diag {
   if ($TestFailed.count -gt 0) {
     Write-Host "CRITICAL: $($TestFailed.count)/$($TestResults.count) tests failed: $($TestFailed -join ', '), run ${DcDiagToRun} /v to see more details"
     Write-Host ''
-    Write-Host $OutputForPrint.Trim()
+    # NRPE output is limited, defaults to 1024 bytes
+    Write-Host $OutputForPrint.Trim().substring(0, [System.Math]::Min(700, $OutputForPrint.Length)).Trim()
     exit 2
   } else {
     Write-Host "OK: $($TestSucceeded.count)/$($TestResults.count) tests succeeded: $($TestSucceeded -join ', ')"
